@@ -3,26 +3,180 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>学習サイト インデックス</title>
+    <title>👼 Angelic Portal ☁️</title>
     <style>
-        body { font-family: sans-serif; line-height: 1.6; padding: 20px; max-width: 600px; margin: auto; }
-        h1 { border-bottom: 2px solid #ccc; }
-        ul { list-style: none; padding: 0; }
-        li { margin: 10px 0; border: 1px solid #ddd; border-radius: 5px; }
-        a { display: block; padding: 15px; text-decoration: none; color: #333; font-weight: bold; }
-        a:hover { background-color: #f4f4f4; color: #007bff; }
+        /* --- 基礎設定 --- */
+        :root {
+            --bg-color: #f0faff; /* ほんのり青みがかった白 */
+            --main-color: #bde0fe; /* 水色（天使の羽） */
+            --accent-color: #ffc8dd; /* ピンク（リボン） */
+            --text-color: #555;     /* 少し柔らかい黒 */
+            --border-radius: 20px;
+        }
+
+        @import url('https://fonts.googleapis.com/css2?family=Kosugi+Maru&display=swap');
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: 'Kosugi+Maru', sans-serif; /* 丸みのあるフォント */
+            margin: 0;
+            padding: 40px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            /* 背景にドットを追加してサブカル感を出す */
+            background-image: radial-gradient(#d0efff 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+
+        /* --- コンテナ（全体の枠） --- */
+        .container {
+            width: 100%;
+            max-width: 500px;
+            background: rgba(255, 255, 255, 0.7); /* 半透明 */
+            backdrop-filter: blur(5px); /* ガラスのようなぼかし */
+            padding: 30px;
+            border-radius: var(--border-radius);
+            box-shadow: 0 10px 25px rgba(189, 224, 254, 0.3); /* 水色の影 */
+            border: 2px solid #fff;
+            text-align: center;
+        }
+
+        /* --- タイトル部分 --- */
+        h1 {
+            font-size: 24px;
+            color: var(--main-color);
+            text-shadow: 0 0 10px rgba(255, 255, 255, 1), 1px 1px 0px var(--accent-color);
+            margin-bottom: 30px;
+            position: relative;
+            display: inline-block;
+        }
+        h1::before, h1::after {
+            content: '☁️'; /* タイトルの横に雲 */
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 18px;
+            opacity: 0.7;
+        }
+        h1::before { left: -35px; }
+        h1::after { right: -35px; }
+
+        /* --- ナビゲーション（リンク一覧） --- */
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        li {
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        /* 天使の羽のようなリボンをイメージ */
+        li::after {
+            content: '▫️';
+            color: var(--accent-color);
+            font-size: 12px;
+            position: absolute;
+            bottom: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        li:last-child::after { content: ''; }
+
+        /* --- リンクボタン --- */
+        a {
+            display: block;
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: bold;
+            padding: 20px;
+            background: #fff;
+            border: 2px solid var(--main-color);
+            border-radius: 50px; /* 丸いボタン */
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden; /* キラキラエフェクト用 */
+            box-shadow: 0 4px 0px var(--main-color); /* 地雷・量産型にも通じる浮かせたデザイン */
+        }
+
+        /* ホバー時のアニメーション */
+        a:hover {
+            transform: translateY(2px); /* 押し込まれる感じ */
+            box-shadow: 0 2px 0px var(--main-color);
+            background-color: var(--bg-color);
+            color: #000;
+        }
+
+        /* リンク内の絵文字 */
+        a .emoji {
+            font-size: 1.2em;
+            margin-right: 5px;
+            vertical-align: middle;
+        }
+
+        /* --- ページ下部の装飾 --- */
+        footer {
+            margin-top: auto;
+            color: var(--main-color);
+            font-size: 12px;
+            opacity: 0.8;
+            padding-top: 20px;
+        }
+
+        /* --- [オプション] キラキラアニメーション (CSSのみ) --- */
+        a::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(
+                135deg,
+                rgba(255, 255, 255, 0) 40%,
+                rgba(255, 255, 255, 0.8) 50%,
+                rgba(255, 255, 255, 0) 60%
+            );
+            transition: all 0.6s;
+            transform: translateX(-100%) translateY(-100%) rotate(45deg);
+        }
+
+        a:hover::before {
+            transform: translateX(100%) translateY(100%) rotate(45deg);
+        }
+
     </style>
 </head>
 <body>
 
-    <h1>学習コンテンツ一覧</h1>
-    
-    <nav>
-        <ul>
-            <li><a href="day1/index.html">Day 1: 初日の学習内容</a></li>
-            <li><a href="day2/index.html">Day 2: 2日目の学習内容</a></li>
-        </ul>
-    </nav>
+    <div class="container">
+        <h1>Angelic Contents</h1>
+        
+        <nav>
+            <ul>
+                <li>
+                    <a href="day1/index.html">
+                        <span class="emoji">❄️</span>
+                        Day 1: 記憶の記録
+                    </a>
+                </li>
+                <li>
+                    <a href="day2/index.html">
+                        <span class="emoji">🧸</span>
+                        Day 2: 浮遊する日常
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+
+    <footer>(c) 儚いサイト制作 2024</footer>
 
 </body>
 </html>
