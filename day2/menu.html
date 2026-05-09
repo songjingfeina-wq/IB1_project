@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cinnamon Menu - 天使界隈</title>
+    <style>
+        :root {
+            --angel-blue: #e1f5fe;
+            --angel-pink: #ffdae9;
+            --accent-blue: #81d4fa;
+            --text-color: #78909c;
+            --heart-pink: #ffb7c5;
+        }
+
+        body {
+            background-color: #f0faff;
+            background-image: linear-gradient(180deg, #ffffff 0%, var(--angel-blue) 100%);
+            font-family: 'Helvetica Neue', Arial, "Hiragino Kaku Gothic ProN", sans-serif;
+            color: var(--text-color);
+            margin: 0;
+            padding: 50px 20px;
+            min-height: 100vh;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* 散りばめられたピンクのハート */
+        .heart {
+            position: absolute;
+            color: var(--heart-pink);
+            font-size: 14px;
+            pointer-events: none;
+            animation: heart-float 5s ease-in-out infinite;
+            z-index: 1;
+        }
+
+        @keyframes heart-float {
+            0%, 100% { transform: translateY(0) rotate(0deg); opacity: 0.6; }
+            50% { transform: translateY(-30px) rotate(20deg); opacity: 0.3; }
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 2.2rem;
+            color: var(--accent-blue);
+            text-shadow: 2px 2px 0px white;
+            letter-spacing: 0.1em;
+            margin-bottom: 50px;
+            z-index: 10;
+            position: relative;
+        }
+
+        /* カード一覧のコンテナ */
+        #menu-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            max-width: 1100px;
+            margin: 0 auto;
+            z-index: 10;
+            position: relative;
+        }
+
+        /* メニューカード */
+        .menu-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(8px);
+            border-radius: 30px;
+            border: 3px solid white;
+            box-shadow: 0 10px 25px rgba(179, 229, 252, 0.3);
+            padding: 25px;
+            text-align: center;
+            transition: all 0.4s ease;
+        }
+
+        .menu-card:hover {
+            transform: translateY(-10px);
+            background: rgba(255, 255, 255, 0.9);
+            box-shadow: 0 15px 35px rgba(255, 183, 197, 0.4); /* ホバー時はピンクの影 */
+            border-color: var(--angel-pink);
+        }
+
+        .menu-icon {
+            font-size: 65px;
+            margin-bottom: 15px;
+            display: block;
+            filter: drop-shadow(0 0 8px var(--angel-blue));
+        }
+
+        .menu-name {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: var(--accent-blue);
+            margin-bottom: 10px;
+        }
+
+        .menu-price {
+            font-size: 1.1rem;
+            color: #90a4ae;
+            background: rgba(255, 255, 255, 0.8);
+            display: inline-block;
+            padding: 4px 18px;
+            border-radius: 20px;
+            border: 1px solid var(--angel-blue);
+        }
+
+        .menu-price::before {
+            content: "໒꒱ ";
+        }
+    </style>
+</head>
+<body>
+
+    <h1>໒꒱ シナモン　メニュー ໒꒱</h1>
+
+    <div id="menu-container"></div>
+
+    <script>
+        // 背景のハートを自動生成
+        for (let i = 0; i < 15; i++) {
+            const heart = document.createElement('div');
+            heart.className = 'heart';
+            heart.innerText = '♥';
+            heart.style.left = Math.random() * 100 + '%';
+            heart.style.top = Math.random() * 100 + '%';
+            heart.style.animationDelay = Math.random() * 5 + 's';
+            heart.style.fontSize = (Math.random() * 10 + 12) + 'px';
+            document.body.appendChild(heart);
+        }
+
+        // メニューデータ
+        const menuItems = [
+            { "name": "天使のオムライス", "price": 1200, "icon": "🍳" },
+            { "name": "雲のクリームパスタ", "price": 1100, "icon": "🍝" },
+            { "name": "ふわふわカフェラテ", "price": 650, "icon": "☕" },
+            { "name": "羽休めメロンソーダ", "price": 600, "icon": "🍹" },
+            { "name": "ぷるぷる純白プリン", "price": 550, "icon": "🍮" },
+            { "name": "ふわもこパンケーキ", "price": 980, "icon": "🥞" }
+        ];
+
+        const container = document.getElementById('menu-container');
+
+        // カード生成
+        for (let i = 0; i < menuItems.length; i++) {
+            const item = menuItems[i];
+            const card = document.createElement('div');
+            card.className = 'menu-card';
+
+            card.innerHTML = `
+                <span class="menu-icon">${item.icon}</span>
+                <div class="menu-name">${item.name}</div>
+                <div class="menu-price">${item.price.toLocaleString()}</div>
+            `;
+
+            container.appendChild(card);
+        }
+    </script>
+</body>
+</html>
+
+
+

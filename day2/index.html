@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Angel Portal - 天使の案内所</title>
+    <style>
+        :root {
+            --main-blue: #b3e5fc;
+            --sub-white: #ffffff;
+            --accent-blue: #81d4fa;
+            --text-color: #78909c;
+            /* ピンクのハート用 */
+            --heart-pink: #ffb7c5; 
+        }
+
+        body {
+            background-color: #e1f5fe;
+            /* 雲のようなグラデーション */
+            background-image: linear-gradient(180deg, #ffffff 0%, #e1f5fe 100%);
+            font-family: 'Helvetica Neue', Arial, "Hiragino Kaku Gothic ProN", sans-serif;
+            color: var(--text-color);
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            overflow: hidden;
+            /* ハートの絶対配置の基準にするため */
+            position: relative; 
+        }
+
+        /* ちりばめるハートの共通スタイル */
+        .heart {
+            position: absolute;
+            color: var(--heart-pink);
+            font-size: 14px;
+            pointer-events: none; /* ハートをクリックできないようにする */
+            user-select: none; /* ハートを選択できないようにする */
+            opacity: 0.8;
+            /* 浮遊アニメーション */
+            animation: float-heart 5s ease-in-out infinite;
+        }
+
+        /* 浮遊アニメーション (ハート用) */
+        @keyframes float-heart {
+            0% { transform: translateY(0px) rotate(0deg); opacity: 0.8; }
+            50% { transform: translateY(-15px) rotate(10deg); opacity: 0.6; }
+            100% { transform: translateY(0px) rotate(0deg); opacity: 0.8; }
+        }
+
+        /* 個別のハートの位置とサイズ */
+        .heart1 { top: 10%; left: 15%; font-size: 18px; animation-delay: 0s; }
+        .heart2 { top: 25%; right: 20%; font-size: 12px; animation-delay: 1s; }
+        .heart3 { bottom: 20%; left: 10%; font-size: 16px; animation-delay: 2s; }
+        .heart4 { bottom: 30%; right: 15%; font-size: 14px; animation-delay: 0.5s; }
+        .heart5 { top: 50%; left: 5%; font-size: 10px; animation-delay: 1.5s; }
+        .heart6 { top: 70%; right: 8%; font-size: 18px; animation-delay: 2.5s; }
+        .heart7 { bottom: 5%; left: 30%; font-size: 12px; animation-delay: 3s; }
+        .heart8 { top: 15%; right: 40%; font-size: 14px; animation-delay: 0.8s; }
+
+        .container {
+            text-align: center;
+            padding: 40px;
+            background: rgba(255, 255, 255, 0.4);
+            backdrop-filter: blur(10px);
+            border-radius: 40px;
+            border: 2px solid var(--sub-white);
+            box-shadow: 0 20px 40px rgba(179, 229, 252, 0.3);
+            max-width: 400px;
+            width: 90%;
+            /* ハートがコンテナの上に表示されるようにする (position: relativeが必要) */
+            position: relative; 
+            z-index: 10; 
+        }
+
+        h1 {
+            font-size: 1.8rem;
+            color: var(--accent-blue);
+            margin-bottom: 10px;
+            letter-spacing: 0.2em;
+        }
+
+        p {
+            font-size: 0.9rem;
+            margin-bottom: 30px;
+            opacity: 0.8;
+        }
+
+        /* リンクメニューのスタイル */
+        .nav-menu {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .nav-item {
+            display: block;
+            text-decoration: none;
+            background: var(--sub-white);
+            color: var(--accent-blue);
+            padding: 15px 20px;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        /* ホバー時の動き */
+        .nav-item:hover {
+            transform: translateY(-3px);
+            background: var(--main-blue);
+            color: white;
+            box-shadow: 0 8px 20px rgba(179, 229, 252, 0.6);
+        }
+
+        .nav-item:active {
+            transform: translateY(1px);
+        }
+
+        /* 装飾用の羽 */
+        .wing-icon {
+            font-size: 1.2rem;
+        }
+
+        /* 浮遊アニメーション */
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+
+        .container {
+            animation: float 4s ease-in-out infinite;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ちりばめられたハート -->
+    <div class="heart heart1">♥</div>
+    <div class="heart heart2">♥</div>
+    <div class="heart heart3">♥</div>
+    <div class="heart heart4">♥</div>
+    <div class="heart heart5">♥</div>
+    <div class="heart heart6">♥</div>
+    <div class="heart heart7">♥</div>
+    <div class="heart heart8">♥</div>
+
+    <div class="container">
+        <h1>໒꒱ Angel Portal</h1>
+        <p>天使のキッチンへようこそ</p>
+
+        <nav class="nav-menu">
+            <a href="aisatu.html" class="nav-item">
+                <span class="wing-icon">⊹</span> あいさつボタン
+            </a>
+            <a href="menu.html" class="nav-item">
+                <span class="wing-icon">⊹</span> カフェメニュー
+            </a>
+            <a href="bot.html" class="nav-item">
+                <span class="wing-icon">⊹</span> 天使の相談室
+            </a>
+        </nav>
+    </div>
+
+</body>
+</html>
