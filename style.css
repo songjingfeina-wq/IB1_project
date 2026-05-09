@@ -1,0 +1,148 @@
+body {
+    background-color: #e0f2ff; /* 淡い水色 */
+    /* 背景に薄いピンクのハートを散りばめる */
+    background-image: 
+        radial-gradient(circle at 50% 50%, rgba(255, 192, 203, 0.4) 0%, transparent 10%),
+        radial-gradient(circle at 20% 30%, rgba(255, 192, 203, 0.3) 0%, transparent 8%);
+    background-size: 100px 100px;
+    color: #5bb2ff;
+    font-family: "ましゅまろポップ ハート", "Marshmallow Pop Heart", "Zen Maru Gothic", sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+/* 全体のコンテナ */
+.container {
+    max-width: 550px;
+    margin: 60px auto;
+    padding: 30px;
+    background-color: rgba(255, 255, 255, 0.85); /* 透明感のある白 */
+    backdrop-filter: blur(8px);
+    border-radius: 50px;
+    border: 4px solid #ffffff;
+    box-shadow: 0 0 25px rgba(255, 182, 193, 0.3); /* ピンクの淡い光 */
+    position: relative;
+}
+
+/* 装飾：ピンクのハートを四隅に配置 */
+.container::before {
+    content: "♥";
+    position: absolute;
+    top: -20px;
+    left: -20px;
+    color: #ffc0cb;
+    font-size: 3rem;
+    filter: drop-shadow(0 0 5px #fff);
+}
+
+/* ヘッダー・店名 */
+.header {
+    text-align: center;
+    padding: 20px 0;
+}
+
+.shop-name {
+    font-size: 2.8rem;
+    color: #ffffff;
+    /* 水色の縁取りとピンクの影 */
+    text-shadow: 
+        2px 2px 0 #add8e6, 
+        -2px -2px 0 #add8e6, 
+        2px -2px 0 #add8e6, 
+        -2px 2px 0 #add8e6,
+        0 0 20px rgba(255, 192, 203, 0.8);
+    display: inline-block;
+}
+
+/* メイン写真 */
+.main-visual {
+    margin-bottom: 30px;
+    position: relative;
+    padding: 10px;
+    background: linear-gradient(45deg, #ffffff, #fff0f5); /* ほんのりピンクのグラデ枠 */
+    border-radius: 30px;
+}
+
+.responsive-img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 20px;
+    border: 3px solid #ffffff;
+    display: block;
+}
+
+/* メニュー箇条書き */
+.menu-section {
+    background: rgba(255, 255, 255, 0.6);
+    padding: 25px;
+    border-radius: 30px;
+    margin-bottom: 35px;
+    border: 2px dashed #ffc0cb; /* ピンクの点線 */
+}
+
+.menu-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+
+.menu-list li {
+    padding: 12px 0;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #7abfff;
+}
+
+/* 箇条書きのアイコンにピンクのハート */
+.menu-list li::before {
+    content: "♡";
+    color: #ffc0cb;
+    margin-right: 10px;
+}
+
+/* 予約ボタン */
+.action-area {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.reserve-button {
+    display: inline-block;
+    background: linear-gradient(135deg, #ffffff 0%, #fff0f5 100%);
+    color: #ffb6c1; /* ピンクの文字 */
+    padding: 15px 45px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 50px;
+    border: 3px solid #ffffff;
+    font-size: 1.3rem;
+    box-shadow: 0 5px 15px rgba(255, 192, 203, 0.4);
+    transition: all 0.3s ease;
+}
+
+.reserve-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(255, 192, 203, 0.6);
+    color: #5bb2ff; /* ホバーで水色に */
+}
+
+/* フッター */
+.footer {
+    text-align: center;
+    font-size: 0.8rem;
+    color: #ffffff;
+    padding-bottom: 40px;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+}
+
+/* ふわふわ揺れるアニメーション */
+@keyframes heartFloat {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-10px) rotate(5deg); }
+}
+
+.container {
+    animation: heartFloat 5s ease-in-out infinite;
+}
