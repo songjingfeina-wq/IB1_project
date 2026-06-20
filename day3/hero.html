@@ -2,71 +2,71 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>概念をまとうネイルチップ専門店【パレット・マジック】</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Mochiy+Pop+One&family=Yomogi&display=swap" rel="stylesheet">
-  <style>
-    .font-cute {
-      font-family: 'Mochiy+Pop+One', sans-serif;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>概念をまとうネイルチップ専門店【パレット・マジック】</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@500;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'M+ PLUS Rounded 1c', sans-serif;
+        }
+        /* テキストの可読性を高めつつ、ポップさを際立たせる文字影 */
+        .text-shadow-pop {
+            text-shadow: 2px 2px 0px #ffb7da, -2px -2px 0px #ffb7da, 2px -2px 0px #ffb7da, -2px 2px 0px #ffb7da, 0px 4px 6px rgba(0,0,0,0.15);
+        }
+        .text-shadow-sub {
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
+        }
+    </style>
 </head>
-<body class="m-0 p-0 overflow-x-hidden antialiased select-none">
+<body class="m-0 p-0 overflow-x-hidden">
 
-  <div class="relative w-full min-h-screen bg-cover bg-center bg-no-repeat flex flex-col justify-between" style="background-image: url('hero.png');">
-    
-    <div class="absolute inset-0 bg-gradient-to-b from-white/40 via-purple-300/30 to-pink-300/40 mix-blend-multiply pointer-events-none"></div>
+    <section class="relative w-full min-h-screen flex flex-col justify-between bg-cover bg-center bg-no-repeat" style="background-image: url('hero.jpg');">
+        
+        <div class="absolute inset-0 bg-white/10 pointer-events-none"></div>
 
-    <header class="relative z-10 w-full px-4 py-3 md:px-8 md:py-4 flex items-center justify-between bg-white/70 backdrop-blur-md border-b-4 border-dashed border-sky-200">
-      <div class="flex items-center gap-3">
-        <img src="logo.png" alt="パレット・マジック ロゴ" class="w-12 h-12 md:w-16 md:h-16 object-contain animate-bounce" style="animation-duration: 3s;">
-        <div class="flex flex-col">
-          <span class="text-xs md:text-sm text-sky-400 font-cute tracking-wider">概念をまとうネイルチップ専門店</span>
-          <h1 class="text-lg md:text-2xl text-pink-400 font-cute drop-shadow-[0_2px_2px_rgba(255,255,255,0.8)]">【パレット・マジック】</h1>
+        <header class="relative z-10 w-full px-4 py-3 sm:px-8 sm:py-4 flex items-center justify-between bg-white/80 backdrop-blur-md shadow-sm border-b border-[#ffb7da]/30">
+            <div class="flex items-center gap-3">
+                <img src="logo.jpg" alt="パレット・マジック ロゴ" class="h-10 w-auto sm:h-14 object-contain drop-shadow-sm">
+                <h1 class="text-[#7cc7e8] font-extrabold text-sm sm:text-lg md:text-xl tracking-wider">
+                    概念をまとうネイルチップ専門店<span class="text-[#ff94c2] block sm:inline sm:ml-2">【パレット・マジック】</span>
+                </h1>
+            </div>
+            
+            <div class="flex gap-1.5 flex-col cursor-pointer sm:hidden">
+                <span class="w-6 h-1 bg-[#7cc7e8] rounded-full"></span>
+                <span class="w-6 h-1 bg-[#ff94c2] rounded-full"></span>
+                <span class="w-6 h-1 bg-[#7cc7e8] rounded-full"></span>
+            </div>
+        </header>
+
+        <div class="relative z-10 flex-grow flex items-center justify-center px-4 py-12 sm:py-0">
+            <div class="max-w-4xl text-center bg-white/40 backdrop-blur-sm sm:bg-transparent p-6 sm:p-0 rounded-3xl border border-white/40 sm:border-none shadow-lg sm:shadow-none">
+                
+                <h2 class="text-white text-shadow-pop font-black text-2xl sm:text-4xl md:text-5xl leading-snug sm:leading-relaxed md:leading-normal mb-6 sm:mb-8 tracking-wide">
+                    「週末のライブも、大好きな日常も。<br class="hidden sm:block">
+                    私だけの『概念』をまとって、いざ出陣！」
+                </h2>
+                
+                <p class="text-white text-shadow-sub font-bold text-sm sm:text-lg md:text-xl leading-loose max-w-2xl mx-auto px-2">
+                    推しカラー、お気に入りの洋服、愛おしいペット……<br class="hidden sm:block">
+                    あなたの「大好き」を1からネイルに仕立てます。
+                </p>
+
+                <div class="mt-8 sm:mt-10">
+                    <a href="#order" class="inline-block bg-[#ff94c2] hover:bg-[#ff7aa7] text-white font-extrabold text-base sm:text-xl px-8 py-3.5 sm:px-12 sm:py-4 rounded-full shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all duration-200 border-b-4 border-[#e06396] tracking-wider">
+                        ❤ 1から相談して作る！オーダーメイドはこちら ❤
+                    </a>
+                </div>
+
+            </div>
         </div>
-      </div>
-      
-      <div class="hidden sm:block">
-        <a href="#order" class="bg-pink-400 hover:bg-pink-500 text-white font-cute text-sm px-5 py-2.5 rounded-full shadow-[0_4px_0_#f472b6] transition-all transform hover:-translate-y-0.5 active:translate-y-0">
-          ＼ 1から相談する！ ／
-        </a>
-      </div>
-    </header>
 
-    <main class="relative z-10 flex-1 flex flex-col items-center justify-center text-center px-4 py-12 max-w-4xl mx-auto">
-      <div class="bg-sky-400/90 text-white font-cute text-xs md:text-base px-6 py-2 rounded-full shadow-[0_4px_0_#38bdf8] mb-6 tracking-widest animate-pulse">
-        💖 週末限定・最愛のわたしに変身 💖
-      </div>
+        <div class="relative z-10 w-full h-8 sm:h-16 pointer-events-none"></div>
 
-      <h2 class="text-white font-cute text-2xl md:text-5xl leading-snug md:leading-relaxed tracking-wide drop-shadow-[0_4px_6px_rgba(244,114,182,0.8)] mb-8">
-        「週末のライブも、大好きな日常も。<br>私だけの『概念』をまとって、いざ出陣！」
-      </h2>
+    </section>
 
-      <p class="text-white font-cute text-sm md:text-xl leading-loose max-w-2xl bg-pink-400/80 px-6 py-4 rounded-2xl border-4 border-white shadow-xl drop-shadow-[0_2px_4px_rgba(0,0,0,0.1)]">
-        推しカラー、お気に入りの洋服、愛おしいペット……<br class="hidden md:block">あなたの「大好き」を1からネイルに仕立てます。
-      </p>
-
-      <div class="mt-10 flex flex-col sm:flex-row gap-4 items-center">
-        <a href="#gallery" class="bg-amber-300 hover:bg-amber-400 text-neutral-700 font-cute text-base md:text-lg px-8 py-4 rounded-full shadow-[0_6px_0_#fbbf24] border-2 border-white transition-all transform hover:scale-105">
-          ✨ 制作例を見る ✨
-        </a>
-        <a href="#order" class="bg-pink-400 hover:bg-pink-500 text-white font-cute text-base md:text-lg px-8 py-4 rounded-full shadow-[0_6px_0_#f472b6] border-2 border-white transition-all transform hover:scale-105">
-          💌 フルオーダーの相談をする 💌
-        </a>
-      </div>
-    </main>
-
-    <div class="relative z-10 w-full text-center pb-6">
-      <div class="animate-bounce inline-block text-white font-cute text-xs bg-purple-400/80 px-4 py-1.5 rounded-full border border-white">
-        私の「好き」を形にする魔法はここから ▼
-      </div>
-    </div>
-
-  </div>
 </body>
 </html>
 
